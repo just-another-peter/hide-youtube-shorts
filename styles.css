@@ -1,0 +1,24 @@
+/* styles.css */
+
+/* While the content.js script handles most dynamic hiding, 
+  this CSS can preemptively hide known static elements for a faster, cleaner load.
+*/
+
+/* Hide Shorts link in the main sidebar */
+ytd-guide-entry-renderer[title="Shorts"],
+ytd-mini-guide-entry-renderer[aria-label="Shorts"] {
+  display: none !important;
+}
+
+/* Hide the entire Shorts shelf/section */
+ytd-reel-shelf-renderer,
+ytd-rich-section-renderer[is-shorts] {
+  display: none !important;
+}
+
+/* Hide videos that are explicitly identified as shorts in feeds */
+ytd-video-renderer:has(a[href*="/shorts/"]),
+ytd-grid-video-renderer:has(a[href*="/shorts/"]),
+ytd-rich-item-renderer:has(a[href*="/shorts/"]) {
+  display: none !important;
+}
